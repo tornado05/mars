@@ -34,6 +34,7 @@ CREATE TABLE UserLike(
 	update_date DATETIME NULL,
 	is_valid TINYINT(1)	 NULL,
 	CONSTRAINT pkId_user_like PRIMARY KEY(id_user_like),
+	CONSTRAINT uId_user_id_comment UNIQUE(id_user, id_comment),
 	CONSTRAINT fkId_user_like FOREIGN KEY(id_user) REFERENCES User(id_user),
 	CONSTRAINT fkId_comment FOREIGN KEY(id_comment) REFERENCES Comment(id_comment)
 );
